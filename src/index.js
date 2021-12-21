@@ -9,18 +9,12 @@ const entrarUsuario = document.getElementById('btnEntrar')
 entrarUsuario.addEventListener('click', (event)=> {
     let nome = document.getElementById('usuario').value
     let senha = document.getElementById('senha').value
-    
-    //Testamdo se os campos não estão vazios
-    if(!nome || nome===null || nome==='' || !senha || senha===null || senha==='') {
-        alert('Campos vazios, não há como executar o login')
+    let alertaModal = controlerUserLogin.loginInfo(nome, senha)
 
-        //Construo um só MODAL e modifico os valores que quero dar para ele de acordo com o campo.  
-        document.getElementById('titleModal').innerHTML = 'Campos incorretos'
-        document.getElementById('bodyModal').innerHTML = 'Os campos não foram preenchidos corretamente'
-        document.getElementById('btnModalClose').innerHTML = 'Fechar'
-        document.getElementById('btnModalSave').innerHTML = 'Salvar'
-        myModal.show()
-    } else {
-        controlerUserLogin.loginInfo(nome, senha)
-    } 
+    document.getElementById('titleModal').innerHTML = alertaModal.title
+    document.getElementById('bodyModal').innerHTML = alertaModal.bodyModal
+    document.getElementById('btnModalClose').innerHTML = alertaModal.b1
+    document.getElementById('btnModalSave').innerHTML = alertaModal.b2
+
+    myModal.show()
 })
