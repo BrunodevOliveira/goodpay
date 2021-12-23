@@ -13,6 +13,7 @@
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
         />
         <link rel="stylesheet" href="./src/styles.css">
+        <script type="module" src="src/index.js"></script>
     </head>
     <body class="trancaTela">
         
@@ -284,37 +285,37 @@
         <script>
             // import userLogin from "/src/moduloDados.js";
 
-            //VAI PARA O INDEX.JS?
-            const campoRecuperarSenha = document.getElementById('btnRecuperar')
-            campoRecuperarSenha.addEventListener('click', (event) => {
-                let nome = document.getElementById('nome').value
-                let email = document.getElementById('email').value
-                conferirUsuario(nome, email)
-            })
+            //VAI PARA O INDEX.JS
+            // const campoRecuperarSenha = document.getElementById('btnRecuperar')
+            // campoRecuperarSenha.addEventListener('click', (event) => {
+            //     let nome = document.getElementById('nome').value
+            //     let email = document.getElementById('email').value
+            //     conferirUsuario(nome, email)
+            // })
 
             //NÃO CONSIGO IMPORTAR MODULO DADOS | TEM NECESSIDADE ?
-            const userLogin = [
-                {id: 1001, username:'victoricoma', senha:'gordinho123', email:'victoricoma@soulcodeacademy.org'},
-                {id: 1002, username:'marcelofarofa', senha:'ff123456', email:'marceloff@gmail.com'}
-            ]
+            // const userLogin = [
+            //     {id: 1001, username:'victoricoma', senha:'gordinho123', email:'victoricoma@soulcodeacademy.org'},
+            //     {id: 1002, username:'marcelofarofa', senha:'ff123456', email:'marceloff@gmail.com'}
+            // ]
 
             //VAI PARA O MÓDULO CONTROLER LOGIN ?
-            function conferirUsuario(nome, email) {
-                let infoCheck = userLogin.find((userLogin) => userLogin.username === nome)
-                let alertMsg = document.getElementById('alertMsg')
+            // function conferirUsuario(nome, email) {
+            //     let infoCheck = userLogin.find((userLogin) => userLogin.username === nome && userLogin.email === email)
+            //     let alertMsg = document.getElementById('alertMsg')
 
-                if(nome === null || email === null || nome === "" || email === "") {
-                    alertMsg.classList.add('alert', 'alert-danger', 'text-center')
-                    alertMsg.innerHTML = 'Campo de email ou usuário não preenchidos.'
-                }else if(!infoCheck) {
-                    alertMsg.classList.add('alert', 'alert-danger', 'text-center')
-                    alertMsg.innerHTML = 'Email ou usuário não encontrados.'
-                } else {
-                    alertMsg.classList.remove('alert-danger')
-                    alertMsg.classList.add('alert', 'alert-success', 'text-center')
-                    alertMsg.innerHTML = 'Email enviado com sucesso!'
-                }
-            }
+            //     if(nome === null || email === null || nome === "" || email === "") {
+            //         alertMsg.classList.add('alert', 'alert-danger', 'text-center')
+            //         alertMsg.innerHTML = 'Campo de email ou usuário não preenchidos.'
+            //     }else if(!infoCheck) {
+            //         alertMsg.classList.add('alert', 'alert-danger', 'text-center')
+            //         alertMsg.innerHTML = 'Email ou usuário não encontrados.'
+            //     } else {
+            //         alertMsg.classList.remove('alert-danger')
+            //         alertMsg.classList.add('alert', 'alert-success', 'text-center')
+            //         alertMsg.innerHTML = 'Email enviado com sucesso!'
+            //     }
+            // }
         </script>
         <script type="module" src="src/index.js"></script>
     
